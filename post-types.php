@@ -24,13 +24,13 @@ class DIERREWEB_Post_Types {
   public function __construct() {
 
     // Hook into the 'init' action
-		add_action( 'init', array( $this, 'register_blocks' ), 1 );
-		add_action( 'init', array( $this, 'slider' ), 1 );
+    add_action( 'init', array( $this, 'register_blocks' ), 1 );
+    add_action( 'init', array( $this, 'slider' ), 1 );
     add_action( 'init', array( $this, 'adoption' ), 1 );
 
     // Duplicate post action for slides
-		add_filter( 'post_row_actions', array( $this, 'duplicate_slide_action'), 10, 2 );
-		add_filter( 'admin_action_dierreweb_duplicate_post_as_draft', array( $this, 'duplicate_post_as_draft' ), 10, 2 );
+    add_filter( 'post_row_actions', array( $this, 'duplicate_slide_action'), 10, 2 );
+    add_filter( 'admin_action_dierreweb_duplicate_post_as_draft', array( $this, 'duplicate_post_as_draft' ), 10, 2 );
 
     // Manage slides list columns
     add_filter( 'manage_edit-dierreweb_slide_columns', array( $this, 'edit_dierreweb_slide_columns' ) );
@@ -41,8 +41,8 @@ class DIERREWEB_Post_Types {
     add_action( 'manage_dierreweb_slider_custom_column', array( $this, 'manage_slider_columns') , 10, 3 );
 
     // Add shortcode column to block list
-		add_filter( 'manage_edit-cms_block_columns', array( $this, 'edit_html_blocks_columns' ) );
-		add_action( 'manage_cms_block_posts_custom_column', array( $this, 'manage_html_blocks_columns' ), 10, 2 );
+    add_filter( 'manage_edit-cms_block_columns', array( $this, 'edit_html_blocks_columns' ) );
+    add_action( 'manage_cms_block_posts_custom_column', array( $this, 'manage_html_blocks_columns' ), 10, 2 );
 
   }
 
@@ -91,17 +91,17 @@ class DIERREWEB_Post_Types {
     $labels = array(
       'name'                  => esc_html__( 'Sliders', 'dr' ),
       'singular_name'         => esc_html__( 'Slider', 'dr' ),
-      'search_items'	        => esc_html__( 'Search Sliders', 'dr' ),
-      'popular_items'	        => esc_html__( 'Popular Sliders', 'dr' ),
+      'search_items'	      => esc_html__( 'Search Sliders', 'dr' ),
+      'popular_items'	      => esc_html__( 'Popular Sliders', 'dr' ),
       'all_items'             => esc_html__( 'All Sliders', 'dr' ),
-      'parent_item'		        => esc_html__( 'Parent Slider', 'dr' ),
-      'parent_item_colon'	    => esc_html__( 'Parent Slider', 'dr' ),
-      'edit_item'				      => esc_html__( 'Edit Slider', 'dr' ),
-      'update_item'			      => esc_html__( 'Update Slider', 'dr' ),
-      'add_new_item'			    => esc_html__( 'Add New Slider', 'dr' ),
-      'new_item_name'			    => esc_html__( 'New Slide', 'dr' ),
-      'add_or_remove_items'	  => esc_html__( 'Add or remove Sliders', 'dr' ),
-      'choose_from_most_used'	=> esc_html__( 'Choose from most used sliders', 'dr' ),
+      'parent_item'	      => esc_html__( 'Parent Slider', 'dr' ),
+      'parent_item_colon'     => esc_html__( 'Parent Slider', 'dr' ),
+      'edit_item'	      => esc_html__( 'Edit Slider', 'dr' ),
+      'update_item'	      => esc_html__( 'Update Slider', 'dr' ),
+      'add_new_item'	      => esc_html__( 'Add New Slider', 'dr' ),
+      'new_item_name'	      => esc_html__( 'New Slide', 'dr' ),
+      'add_or_remove_items'   => esc_html__( 'Add or remove Sliders', 'dr' ),
+      'choose_from_most_used' => esc_html__( 'Choose from most used sliders', 'dr' ),
       'menu_name'             => esc_html__( 'Slider', 'dr' )
     );
 
@@ -351,20 +351,20 @@ class DIERREWEB_Post_Types {
     register_post_type( 'adoption ', $args );
 
     $labels = array(
-      'name'					        => esc_html__( 'Adoption Categories', 'dr' ),
-      'singular_name'			    => esc_html__( 'Adoption Category', 'dr' ),
-      'search_items'			    => esc_html__( 'Search Categories', 'dr' ),
-      'popular_items'		    	=> esc_html__( 'Popular Adoption Categories', 'dr' ),
-      'all_items'			      	=> esc_html__( 'All Adoption Categories', 'dr' ),
-      'parent_item'			      => esc_html__( 'Parent Category', 'dr' ),
-      'parent_item_colon'		  => esc_html__( 'Parent Category', 'dr' ),
-      'edit_item'				      => esc_html__( 'Edit Category', 'dr' ),
-      'update_item'			      => esc_html__( 'Update Category', 'dr' ),
-      'add_new_item'		     	=> esc_html__( 'Add New Category', 'dr' ),
-      'new_item_name'			    => esc_html__( 'New Category', 'dr' ),
-      'add_or_remove_items'	  => esc_html__( 'Add or remove Categories', 'dr' ),
-      'choose_from_most_used'	=> esc_html__( 'Choose from most used text-domain', 'dr' ),
-      'menu_name'				      => esc_html__( 'Category', 'dr' )
+      'name'		      => esc_html__( 'Adoption Categories', 'dr' ),
+      'singular_name'	      => esc_html__( 'Adoption Category', 'dr' ),
+      'search_items'	      => esc_html__( 'Search Categories', 'dr' ),
+      'popular_items'	      => esc_html__( 'Popular Adoption Categories', 'dr' ),
+      'all_items'	      => esc_html__( 'All Adoption Categories', 'dr' ),
+      'parent_item'	      => esc_html__( 'Parent Category', 'dr' ),
+      'parent_item_colon'     => esc_html__( 'Parent Category', 'dr' ),
+      'edit_item'	      => esc_html__( 'Edit Category', 'dr' ),
+      'update_item'	      => esc_html__( 'Update Category', 'dr' ),
+      'add_new_item'	      => esc_html__( 'Add New Category', 'dr' ),
+      'new_item_name'	      => esc_html__( 'New Category', 'dr' ),
+      'add_or_remove_items'   => esc_html__( 'Add or remove Categories', 'dr' ),
+      'choose_from_most_used' => esc_html__( 'Choose from most used text-domain', 'dr' ),
+      'menu_name'	      => esc_html__( 'Category', 'dr' )
     );
 
     $args = array(
